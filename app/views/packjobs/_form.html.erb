@@ -1,0 +1,36 @@
+
+
+<%= form_with model: @packjob, local: true do |form| %>
+
+  <% if @packjob.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@packjob.errors.count, "error") %> prohibited
+        this packjob from being saved:
+      </h2>
+      <ul>
+        <% @packjob.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label Time.now.strftime("%m/%d/%Y %I:%M:%S %P") %><br />
+    <p>
+      <%= form.label :packer %><br>
+      <%= form.text_field :packer %>
+    </p>
+
+    <p>
+      <%= form.label :rig %><br>
+      <%= form.text_field :rig %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  </div>
+  
+<% end %>

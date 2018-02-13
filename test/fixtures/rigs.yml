@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rig_status: false
+  rig_type_number: MyString
+  rig_season_jumpnum: 1
+  rig_res_last: 2018-02-12
+  rig_res_who: MyString
+
+two:
+  rig_status: false
+  rig_type_number: MyString
+  rig_season_jumpnum: 1
+  rig_res_last: 2018-02-12
+  rig_res_who: MyString
