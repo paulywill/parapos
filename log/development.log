@@ -4880,3 +4880,170 @@ Processing by RigsController#show as HTML
 Completed 200 OK in 88ms (Views: 82.9ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-12 23:14:17 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 1220ms (Views: 1199.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-13 17:57:10 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.8ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 192ms (Views: 161.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 18:12:44 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (1.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (58.5ms)
+Completed 200 OK in 258ms (Views: 180.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-13 18:12:48 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (211.8ms)
+  Rendered rigs/new.html.erb within layouts/application (245.5ms)
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `check_box_tag' for #<ActionView::Helpers::FormBuilder:0x00007fbffdb41648>
+Did you mean?  check_box):
+    19:   <div class="field">
+    20:     <p>
+    21:       <%= form.label :rig_online %>
+    22:       <%= form.check_box_tag :rig_status %>
+    23:     </p>
+    24: 
+    25:     <p>
+  
+app/views/rigs/_form.html.erb:22:in `block in _app_views_rigs__form_html_erb___4306283962137623640_70231286008340'
+app/views/rigs/_form.html.erb:3:in `_app_views_rigs__form_html_erb___4306283962137623640_70231286008340'
+app/views/rigs/new.html.erb:3:in `_app_views_rigs_new_html_erb___1081274420338733565_70231286017380'
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-13 18:13:12 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (7.6ms)
+  Rendered rigs/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 51ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rigs" for 127.0.0.1 at 2018-02-13 18:13:24 -0500
+Processing by RigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"axewbN539gZBS2UzGCzTKwJrER1RhRPKDiPFzvGzl5zjRxZmSXWEVkNZSX2em4Jg9UehxkOKwa/S4hKS6bqtSQ==", "rig"=>{"rig_status"=>"1", "rig_type_number"=>"Javelin #1"}, "commit"=>"Create Rig"}
+Unpermitted parameter: :rig_status
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "rigs" ("rig_type_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["rig_type_number", "Javelin #1"], ["created_at", "2018-02-13 23:13:24.601127"], ["updated_at", "2018-02-13 23:13:24.601127"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/rigs/4
+Completed 302 Found in 11ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/rigs/4" for 127.0.0.1 at 2018-02-13 18:13:24 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering rigs/show.html.erb within layouts/application
+  Rendered rigs/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 84ms (Views: 74.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rigs/4" for 127.0.0.1 at 2018-02-13 18:18:22 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRig Load (0.2ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering rigs/show.html.erb within layouts/application
+  Rendered rigs/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 18:18:25 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (1.2ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 72ms (Views: 65.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-13 18:18:26 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (6.4ms)
+  Rendered rigs/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 70ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rigs" for 127.0.0.1 at 2018-02-13 18:18:33 -0500
+Processing by RigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CwDVt+EeprrQSXSRTKZbDGaTRoJaqQoSj0jf5ujgWhKM0f7W2Ols7XQZNy5jHsSUG7AwFnq9zD4+/RA/VFdIJQ==", "rig"=>{"rig_status"=>"1", "rig_type_number"=>"testing this long string"}, "commit"=>"Create Rig"}
+Unpermitted parameter: :rig_status
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "rigs" ("rig_type_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["rig_type_number", "testing this long string"], ["created_at", "2018-02-13 23:18:33.969928"], ["updated_at", "2018-02-13 23:18:33.969928"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/rigs/5
+Completed 302 Found in 9ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/rigs/5" for 127.0.0.1 at 2018-02-13 18:18:33 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering rigs/show.html.erb within layouts/application
+  Rendered rigs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 67ms (Views: 59.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 18:18:36 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 84ms (Views: 78.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-13 18:25:51 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (3.9ms)
+  Rendered rigs/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 96ms (Views: 61.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/rigs" for 127.0.0.1 at 2018-02-13 18:25:57 -0500
+Processing by RigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pu3B/N3Yhi13YIf04aBVCU3Sz/8WTdPRSYn09jbI/CIhPOqd5C9MetMwxEvOGMqRMPG5azZZFf34PDsvin/uFQ==", "rig"=>{"rig_status"=>"1", "rig_type_number"=>"Vectoria"}, "commit"=>"Create Rig"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "rigs" ("rig_status", "rig_type_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["rig_status", "t"], ["rig_type_number", "Vectoria"], ["created_at", "2018-02-13 23:25:57.342548"], ["updated_at", "2018-02-13 23:25:57.342548"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/rigs/6
+Completed 302 Found in 10ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/rigs/6" for 127.0.0.1 at 2018-02-13 18:25:57 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering rigs/show.html.erb within layouts/application
+  Rendered rigs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 67ms (Views: 59.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 18:25:59 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 107ms (Views: 97.5ms | ActiveRecord: 0.5ms)
+
+

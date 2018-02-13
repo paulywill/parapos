@@ -19,7 +19,8 @@
   <div class="field">
     <p>
       <%= form.label :rig_online %>
-      <%= form.check_box :rig_status %>
+      <%= form.check_box :rig_status, :type => "checkbox", :value => "1", :checked => "1"
+ %>
     </p>
 
     <p>
