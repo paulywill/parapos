@@ -5047,3 +5047,786 @@ Processing by RigsController#index as HTML
 Completed 200 OK in 107ms (Views: 97.5ms | ActiveRecord: 0.5ms)
 
 
+Started DELETE "/rigs/5" for 127.0.0.1 at 2018-02-13 18:54:23 -0500
+Processing by RigsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9CGFybDjA64Uu1q9Cik7OQEctCVlPAxpqI4cKzQMMGR8cSPDJ+Fx/hapdvOMnmpy9jAE/ncz3gx0T8t3LAUKsQ==", "id"=>"5"}
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "rigs" WHERE "rigs"."id" = ?[0m  [["id", 5]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/rigs
+Completed 302 Found in 13ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 18:54:23 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 53ms (Views: 46.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rigs/6/edit" for 127.0.0.1 at 2018-02-13 18:54:27 -0500
+Processing by RigsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering rigs/edit.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (11.2ms)
+  Rendered rigs/edit.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 89ms (Views: 78.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 18:54:29 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (1.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 103ms (Views: 95.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rigs/6" for 127.0.0.1 at 2018-02-13 18:54:35 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering rigs/show.html.erb within layouts/application
+  Rendered rigs/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 62ms (Views: 52.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 18:54:37 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (5.2ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 138ms (Views: 128.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-13 18:54:53 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (13.9ms)
+  Rendered rigs/new.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 86ms (Views: 82.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-13 18:57:18 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (2.6ms)
+  Rendered rigs/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 54ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-13 18:57:57 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (3.4ms)
+  Rendered rigs/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 69ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-13 18:58:11 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (4.0ms)
+  Rendered rigs/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 84ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-13 18:58:26 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (6.5ms)
+  Rendered rigs/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 87ms (Views: 84.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 18:58:34 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (1.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 80ms (Views: 74.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/rigs/6/edit" for 127.0.0.1 at 2018-02-13 18:58:36 -0500
+Processing by RigsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering rigs/edit.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (6.1ms)
+  Rendered rigs/edit.html.erb within layouts/application (58.7ms)
+Completed 200 OK in 181ms (Views: 177.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 18:58:37 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.6ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 102ms (Views: 97.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 19:00:19 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (352.4ms)
+Completed 500 Internal Server Error in 368ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `show_packjobs_path' for #<#<Class:0x00007fbff9247870>:0x00007fbffb7e3de0>):
+    52: 
+    53: 
+    54: <br><%= link_to 'New Rig', new_rig_path %> |
+    55: <%= link_to 'Packjobs', show_packjobs_path %>
+  
+app/views/rigs/index.html.erb:55:in `_app_views_rigs_index_html_erb__300422824667999986_70231267429860'
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 19:00:30 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (342.8ms)
+Completed 500 Internal Server Error in 354ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `show_packjob_path' for #<#<Class:0x00007fbff9247870>:0x00007fbffd8597c8>
+Did you mean?  edit_packjob_path):
+    52: 
+    53: 
+    54: <br><%= link_to 'New Rig', new_rig_path %> |
+    55: <%= link_to 'Packjobs', show_packjob_path %>
+  
+app/views/rigs/index.html.erb:55:in `_app_views_rigs_index_html_erb__300422824667999986_70231284439160'
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 19:02:10 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.2ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (354.9ms)
+Completed 500 Internal Server Error in 385ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `packers_path' for #<#<Class:0x00007fbffd9e6fc8>:0x00007fbffd9e4c78>
+Did you mean?  packjobs_path
+               packjob_path):
+    55: 
+    56: <%= link_to 'New Rig', new_rig_path %> |
+    57: <%= link_to 'Packjobs', packjobs_path %> |
+    58: <%= link_to 'Packers', packers_path %> |
+    59: <%= link_to 'Damages', damages_path %>
+  
+app/views/rigs/index.html.erb:58:in `_app_views_rigs_index_html_erb__300422824667999986_70231285251140'
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 19:02:34 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  Rendered rigs/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/paulgamble/Coding/RoR/parapos/app/views/rigs/index.html.erb:67: embedded document meets end of file
+/Users/paulgamble/Coding/RoR/parapos/app/views/rigs/index.html.erb:67: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/rigs/index.html.erb:67: embedded document meets end of file
+app/views/rigs/index.html.erb:67: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/rigs" for 127.0.0.1 at 2018-02-13 19:03:25 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-13 19:03:28 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 91ms (Views: 76.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-13 19:05:10 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (23.4ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `pj_rig_type_number' for #<Packjob:0x00007fbffdec7c68>):
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22:         <td><%= packjob.packer %></td>
+    23:         <td><%= link_to packjob.pj_rig_type_number,rig_path(packjob.rig_id) %></td>
+    24:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+    25:         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+    26:         <td><%= link_to 'Destroy', packjob_path(packjob),
+  
+app/views/packjobs/index.html.erb:23:in `block in _app_views_packjobs_index_html_erb__2394696914840883839_70231293849400'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb__2394696914840883839_70231293849400'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-13 19:05:55 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `rig_id' for #<Packjob:0x00007fbffd50ccc8>
+Did you mean?  rig_was):
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22:         <td><%= packjob.packer %></td>
+    23:         <td><%= packjob.rig %></td>
+    24:         <td><%= link_to packjob.rig,rig_path(packjob.rig_id) %></td>
+    25:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+    26:         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+    27:         <td><%= link_to 'Destroy', packjob_path(packjob),
+  
+app/views/packjobs/index.html.erb:24:in `block in _app_views_packjobs_index_html_erb__2394696914840883839_70231243482420'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb__2394696914840883839_70231243482420'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-14 15:38:16 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.7ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (38.9ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `rig_id' for #<Packjob:0x00007fbffdfcd068>
+Did you mean?  rig_was):
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22:         <td><%= packjob.packer %></td>
+    23:         <td><%= packjob.rig %></td>
+    24:         <td><%= link_to packjob.rig,rig_path(packjob.rig_id) %></td>
+    25:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+    26:         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+    27:         <td><%= link_to 'Destroy', packjob_path(packjob),
+  
+app/views/packjobs/index.html.erb:24:in `block in _app_views_packjobs_index_html_erb__2394696914840883839_70231288408820'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb__2394696914840883839_70231288408820'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-14 15:39:59 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 68ms (Views: 63.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-14 15:40:42 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-14 15:40:45 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/rigs/0" for 127.0.0.1 at 2018-02-14 15:40:49 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Rig with 'id'=0):
+  
+app/controllers/rigs_controller.rb:8:in `show'
+Started GET "/rigs" for 127.0.0.1 at 2018-02-14 15:42:07 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 66ms (Views: 59.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rigs/6" for 127.0.0.1 at 2018-02-14 15:42:30 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering rigs/show.html.erb within layouts/application
+  Rendered rigs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 75ms (Views: 66.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-14 15:42:32 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 96ms (Views: 89.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-14 15:42:37 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (1.8ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 88ms (Views: 81.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rigs/23" for 127.0.0.1 at 2018-02-14 15:42:39 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Rig with 'id'=23):
+  
+app/controllers/rigs_controller.rb:8:in `show'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-14 15:42:46 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 67ms (Views: 60.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-14 15:42:55 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (6.9ms)
+  Rendered packjobs/new.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 81ms (Views: 69.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-14 15:42:58 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 116ms (Views: 109.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 20:39:21 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (13.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (71.9ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 14.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `rig_id' for #<Packjob:0x00007fbffead5d70>
+Did you mean?  rig_was):
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22:         <td><%= packjob.packer %></td>
+    23:         <td><%= link_to packjob.rig,rig_path(packjob.rig_id) %></td>
+    24:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+    25:         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+    26:         <td><%= link_to 'Destroy', packjob_path(packjob),
+  
+app/views/packjobs/index.html.erb:23:in `block in _app_views_packjobs_index_html_erb__2394696914840883839_70231294207140'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb__2394696914840883839_70231294207140'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 20:46:24 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 97ms (Views: 90.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-15 20:46:36 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 90ms (Views: 84.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-02-15 20:46:44 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (19.2ms)
+  Rendered rigs/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 100ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-15 20:47:59 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 145ms (Views: 141.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 20:48:01 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.7ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 104ms (Views: 96.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 20:48:03 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (16.6ms)
+  Rendered packjobs/new.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 126ms (Views: 121.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/packjobs" for 127.0.0.1 at 2018-02-15 20:48:24 -0500
+Processing by PackjobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5o7ylBQPbCEM/QCuvbIEwVNGSe6IkFDqBG/9IWFOO4WvSVCGcW07pjnZ5Um3WCiEPMEG5QUxs40K1LKF4VDS4Q==", "packjob"=>{"packer"=>"Paul", "rig"=>"Vector #3"}, "commit"=>"Create Packjob"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "packjobs" ("packer", "rig", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["packer", "Paul"], ["rig", "Vector #3"], ["created_at", "2018-02-16 01:48:24.272874"], ["updated_at", "2018-02-16 01:48:24.272874"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/packjobs/15
+Completed 302 Found in 18ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/packjobs/15" for 127.0.0.1 at 2018-02-15 20:48:24 -0500
+Processing by PackjobsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPackjob Load (1.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" WHERE "packjobs"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering packjobs/show.html.erb within layouts/application
+  Rendered packjobs/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 68ms (Views: 60.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 20:48:29 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (1.1ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 93ms (Views: 87.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-15 20:48:37 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.6ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 69ms (Views: 64.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rigs/Vector%20%233" for 127.0.0.1 at 2018-02-15 20:48:47 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"Vector #3"}
+  [1m[36mRig Load (3.2ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 3.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Rig with 'id'=Vector #3):
+  
+app/controllers/rigs_controller.rb:8:in `show'
+Started GET "/rigs/Vector%20%233" for 127.0.0.1 at 2018-02-15 20:54:25 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"Vector #3"}
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Rig with 'id'=Vector #3):
+  
+app/controllers/rigs_controller.rb:8:in `show'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 20:54:31 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.8ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 77ms (Views: 71.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 20:54:34 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (51.4ms)
+  Rendered packjobs/new.html.erb within layouts/application (56.1ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__2896937436726426766_70231241241780'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__2896937436726426766_70231241241780'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb___1045216500462583138_70231242157360'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 20:59:42 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (5.9ms)
+  Rendered packjobs/new.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__2896937436726426766_70231243725160'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__2896937436726426766_70231243725160'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb___1045216500462583138_70231286586580'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 20:59:56 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (5.6ms)
+  Rendered packjobs/new.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__2896937436726426766_70231247953700'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__2896937436726426766_70231247953700'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb___1045216500462583138_70231293768900'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 21:00:04 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (5.7ms)
+  Rendered packjobs/new.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__2896937436726426766_70231280964660'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__2896937436726426766_70231280964660'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb___1045216500462583138_70231281048900'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 21:24:05 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (24.6ms)
+  Rendered packjobs/new.html.erb within layouts/application (33.8ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__2896937436726426766_70231287460360'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__2896937436726426766_70231287460360'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb___1045216500462583138_70231287419860'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 21:31:12 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (8.9ms)
+  Rendered packjobs/new.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__2896937436726426766_70231243579520'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__2896937436726426766_70231243579520'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb___1045216500462583138_70231287642920'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 21:37:43 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (6.6ms)
+  Rendered packjobs/new.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__2896937436726426766_70231296987640'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__2896937436726426766_70231296987640'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb___1045216500462583138_70231297035600'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 21:38:29 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (28.2ms)
+  Rendered packjobs/new.html.erb within layouts/application (34.8ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__917676921419696221_70233666884320'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__917676921419696221_70233666884320'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb__2405099065415127062_70233667067660'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 23:01:04 -0500
+Processing by PackjobsController#new as HTML
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 65ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Rigs with 'id': (all, {:conditions=>{:rig_status=>"t"}, :order=>"rig_type_number"}) (found 0 results, but was looking for 2)):
+  
+app/controllers/packjobs_controller.rb:13:in `new'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 23:02:48 -0500
+Processing by PackjobsController#index as HTML
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 5ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Rigs with 'id': (all, {:order=>"rig_type_number"}) (found 0 results, but was looking for 2)):
+  
+app/controllers/packjobs_controller.rb:4:in `index'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 23:04:28 -0500
+Processing by PackjobsController#index as HTML
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 19ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Rig with 'id'=all):
+  
+app/controllers/packjobs_controller.rb:4:in `index'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 23:05:10 -0500
+Processing by PackjobsController#index as HTML
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Rig with 'id'=):
+  
+app/controllers/packjobs_controller.rb:4:in `index'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 23:07:05 -0500
+Processing by PackjobsController#index as HTML
+  [1m[36mRig Load (0.2ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Rig with 'id'=):
+  
+app/controllers/packjobs_controller.rb:4:in `index'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 23:08:54 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 395ms (Views: 385.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-02-15 23:09:33 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (1.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 100ms (Views: 88.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-15 23:09:38 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 82ms (Views: 75.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-15 23:09:40 -0500
+Processing by PackjobsController#new as HTML
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Rigs with 'id': (all, {:conditions=>{:rig_status=>"t"}, :order=>"rig_type_number"}) (found 0 results, but was looking for 2)):
+  
+app/controllers/packjobs_controller.rb:13:in `new'

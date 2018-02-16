@@ -6,6 +6,7 @@ class RigsController < ApplicationController
 
   def show
     @rig = Rig.find(params[:id])
+    @rigs = Rig.order(:rig_type_number)
   end
 
   def new
@@ -14,11 +15,12 @@ class RigsController < ApplicationController
 
   def edit
     @rig = Rig.find(params[:id])
+    @rigs = Rig.order(:rig_type_number)
   end
 
   def create
     @rig = Rig.new(rig_params)
-
+    @rigs = Rig.all
     if @rig.save
       redirect_to @rig
     else

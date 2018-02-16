@@ -6,7 +6,7 @@ module RigsHelper
     if args[:boolStatus] == true then
       return_value = 'ONLINE'
     else
-  	return_value = 'OFFLINE'
+  	  return_value = 'OFFLINE'
     end
     return return_value
   end

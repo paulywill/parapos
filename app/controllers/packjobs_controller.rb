@@ -1,6 +1,7 @@
 class PackjobsController < ApplicationController
   def index
     @packjobs = Packjob.paginate(page: params[:page]).order('id DESC')
+    @rigs = Rig.all
   end
 
   def show
@@ -9,15 +10,17 @@ class PackjobsController < ApplicationController
 
   def new
     @packjob = Packjob.new
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
   end
 
   def edit
     @packjob = Packjob.find(params[:id])
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
   end
 
   def create
     @packjob = Packjob.new(packjob_params)
-
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
     if @packjob.save
       redirect_to @packjob
     else
@@ -28,7 +31,7 @@ class PackjobsController < ApplicationController
 
   def update
     @packjob = Packjob.find(params[:id])
-
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
     if @packjob.update(packjob_params)
       redirect_to @packjob
     else
@@ -48,5 +51,10 @@ class PackjobsController < ApplicationController
     def packjob_params
       params.require(:packjob).permit(:packer, :rig)
     end
+
+    def rigs_params
+      params.require(:rig).permit(:rig_status, :rig_type_number)
+    end
+
 
 end
