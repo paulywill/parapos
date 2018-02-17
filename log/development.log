@@ -5830,3 +5830,178 @@ Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms)
 ActiveRecord::RecordNotFound (Couldn't find all Rigs with 'id': (all, {:conditions=>{:rig_status=>"t"}, :order=>"rig_type_number"}) (found 0 results, but was looking for 2)):
   
 app/controllers/packjobs_controller.rb:13:in `new'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 21:31:48 -0500
+Processing by PackjobsController#new as HTML
+  [1m[36mRig Load (13.5ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 54ms (ActiveRecord: 13.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Rigs with 'id': (all, {:conditions=>{:rig_status=>"t"}, :order=>"rig_type_number"}) (found 0 results, but was looking for 2)):
+  
+app/controllers/packjobs_controller.rb:13:in `new'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 22:11:01 -0500
+Processing by PackjobsController#new as HTML
+  [1m[36mRig Load (1.4ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 25ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Rigs with 'id': (all, {:conditions=>{:rig_status=>"t"}, :order=>"rig_type_number"}) (found 0 results, but was looking for 2)):
+  
+app/controllers/packjobs_controller.rb:13:in `new'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 22:17:32 -0500
+Processing by PackjobsController#new as HTML
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 28ms (ActiveRecord: 2.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Rigs with 'id': (all, {:conditions=>{:rig_status=>"t"}, :order=>"rig_type_number"}) (found 0 results, but was looking for 2)):
+  
+app/controllers/packjobs_controller.rb:13:in `new'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-16 22:17:37 -0500
+Processing by PackjobsController#index as HTML
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 63ms (Views: 55.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 22:18:37 -0500
+Processing by PackjobsController#new as HTML
+  [1m[36mRig Load (0.2ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (9.1ms)
+  Rendered packjobs/new.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__917676921419696221_70233670478100'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__917676921419696221_70233670478100'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb__2405099065415127062_70233670577220'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 22:35:46 -0500
+Processing by PackjobsController#new as HTML
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering packjobs/new.html.erb within layouts/application
+  Rendered packjobs/_form.html.erb (9.1ms)
+  Rendered packjobs/new.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    25: 
+    26:     <p>
+    27:       <%= form.label :rig %><br>
+    28:       <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
+    29:       <%= form.text_field :rig %>
+    30:     </p>
+    31: 
+  
+app/views/packjobs/_form.html.erb:28:in `block in _app_views_packjobs__form_html_erb__917676921419696221_70233678688680'
+app/views/packjobs/_form.html.erb:3:in `_app_views_packjobs__form_html_erb__917676921419696221_70233678688680'
+app/views/packjobs/new.html.erb:3:in `_app_views_packjobs_new_html_erb__2405099065415127062_70233639715080'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 22:36:46 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs"[0m
+  Rendered packjobs/_form.html.erb (31.8ms)
+  Rendered packjobs/new.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 90ms (Views: 70.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 22:37:17 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs"[0m
+  Rendered packjobs/_form.html.erb (4.5ms)
+  Rendered packjobs/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 40ms (Views: 35.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 22:38:34 -0500
+Processing by PackjobsController#new as HTML
+  [1m[36mRig Load (0.2ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."id" IN (NULL, NULL)[0m
+Completed 404 Not Found in 18ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find all Rigs with 'id': (all, {:conditions=>{:rig_status=>"t"}, :order=>"rig_type_number"}) (found 0 results, but was looking for 2)):
+  
+app/controllers/packjobs_controller.rb:15:in `new'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 22:39:44 -0500
+Processing by PackjobsController#new as HTML
+  [1m[36mRig Load (0.2ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 25ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Rig with 'id'=all):
+  
+app/controllers/packjobs_controller.rb:15:in `new'
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-02-16 22:43:01 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."rig_status" = ?[0m  [["rig_status", "t"]]
+  Rendered packjobs/_form.html.erb (15.2ms)
+  Rendered packjobs/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 72ms (Views: 50.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-16 22:48:04 -0500
+Processing by PackjobsController#index as HTML
+  [1m[36mRig Load (0.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.8ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"rigs", :id=>nil}, missing required keys: [:id]):
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22:         <td><%= packjob.packer %></td>
+    23:         <td><%= link_to packjob.rig,rig_path(packjob.rig) %></td>
+    24:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+    25:         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+    26:         <td><%= link_to 'Destroy', packjob_path(packjob),
+  
+app/views/packjobs/index.html.erb:23:in `block in _app_views_packjobs_index_html_erb__879972580414977508_70233688282960'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb__879972580414977508_70233688282960'
+Started GET "/packjobs" for 127.0.0.1 at 2018-02-16 22:48:36 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"rigs", :id=>nil}, missing required keys: [:id]):
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22:         <td><%= packjob.packer %></td>
+    23:         <td><%= link_to packjob.rig,rig_path(packjob.rig) %></td>
+    24:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+    25:         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+    26:         <td><%= link_to 'Destroy', packjob_path(packjob),
+  
+app/views/packjobs/index.html.erb:23:in `block in _app_views_packjobs_index_html_erb__879972580414977508_70233690025540'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb__879972580414977508_70233690025540'

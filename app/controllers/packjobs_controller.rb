@@ -1,7 +1,7 @@
 class PackjobsController < ApplicationController
   def index
     @packjobs = Packjob.paginate(page: params[:page]).order('id DESC')
-    @rigs = Rig.all
+    @rigs = Rig.where(rig_status: "t")
   end
 
   def show
@@ -10,7 +10,9 @@ class PackjobsController < ApplicationController
 
   def new
     @packjob = Packjob.new
-    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
+    #@rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
+    #@rigs = Rig.find_by(:id => params[:id])
+    @rigs = Rig.where(rig_status: "t")
   end
 
   def edit
