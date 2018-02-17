@@ -10,19 +10,18 @@ class PackjobsController < ApplicationController
 
   def new
     @packjob = Packjob.new
-    #@rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
-    #@rigs = Rig.find_by(:id => params[:id])
     @rigs = Rig.where(rig_status: "t")
   end
 
   def edit
     @packjob = Packjob.find(params[:id])
-    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
+    @rigs = Rig.where(rig_status: "t")
   end
 
   def create
     @packjob = Packjob.new(packjob_params)
-    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
+    #@rigs = Rig.where(rig_status: "t")
+    @rigs = Rig.all
     if @packjob.save
       redirect_to @packjob
     else
@@ -33,7 +32,7 @@ class PackjobsController < ApplicationController
 
   def update
     @packjob = Packjob.find(params[:id])
-    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
+    @rigs = Rig.where(rig_status: "t")
     if @packjob.update(packjob_params)
       redirect_to @packjob
     else
