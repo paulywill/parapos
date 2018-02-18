@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212055144) do
+ActiveRecord::Schema.define(version: 20180218040348) do
 
   create_table "packjobs", force: :cascade do |t|
     t.string "packer"
     t.string "rig"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rig_id"
+    t.index ["rig_id"], name: "index_packjobs_on_rig_id"
   end
 
   create_table "rigs", force: :cascade do |t|

@@ -6,7 +6,7 @@ class RigsController < ApplicationController
 
   def show
     @rig = Rig.find(params[:id])
-    @rigs = Rig.order(:rig_type_number)
+    @rigs = Rig.all
   end
 
   def new

@@ -1,11 +1,12 @@
 class PackjobsController < ApplicationController
   def index
     @packjobs = Packjob.paginate(page: params[:page]).order('id DESC')
-    @rigs = Rig.where(rig_status: "t")
+    @rigs = Rig.all
   end
 
   def show
     @packjob = Packjob.find(params[:id])
+    @rigs = Rig.find(params[:id])
   end
 
   def new
@@ -21,7 +22,7 @@ class PackjobsController < ApplicationController
   def create
     @packjob = Packjob.new(packjob_params)
     #@rigs = Rig.where(rig_status: "t")
-    @rigs = Rig.all
+    @rigs = Rig.where(rig_status: "t")
     if @packjob.save
       redirect_to @packjob
     else
