@@ -20,7 +20,7 @@
   <tr class="<%= cycle('rowA', 'rowB') %>">
         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
         <td><%= packjob.packer %></td>
-        <td><%= link_to packjob.rig,rig_path(packjob.rig_id) %></td>
+        <td><%= link_to packjob.rig.rig_type_number ,rig_path(packjob.rig_id) %> </td>
         <td><%= link_to 'Show', packjob_path(packjob) %></td>
         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
         <td><%= link_to 'Destroy', packjob_path(packjob),

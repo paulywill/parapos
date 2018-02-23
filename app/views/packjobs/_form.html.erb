@@ -25,7 +25,7 @@
 
     <p>
       <%= form.label :rig %><br>
-      <%= form.collection_select(:rig, @rigs, :id, :rig_type_number,  {:include_blank => false}) %><br>
+      <%= form.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br>
     </p>
 
     <p>
