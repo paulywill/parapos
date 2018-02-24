@@ -1,0 +1,40 @@
+
+
+<%= form_with model: @packer, local: true do |form| %>
+
+  <% if @packer.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@packer.errors.count, "error") %> prohibited
+        this packer from being saved:
+      </h2>
+      <ul>
+        <% @packer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p>
+      <%= form.label :packer_name %>:
+      <%= form.text_field :packer_name %>
+    </p>
+
+    <p>
+      <%= form.label :rating_expiry_date %>:
+      <%= datepicker_input form, :packer_rating_date%>
+    </p>
+      <%= form.label :team_status %>:
+      <%= form.check_box :packer_team, :type => "checkbox", :value => "1", :checked => "1"
+ %>
+    </p>
+
+
+    <p>
+      <%= form.submit %>
+    </p>
+  </div>
+
+<% end %>
