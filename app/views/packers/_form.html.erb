@@ -19,15 +19,17 @@
   <div class="field">
     <p>
       <%= form.label :packer_name %>:
-      <%= form.text_field :packer_name %>
+      <%= form.text_field :name %>
     </p>
 
     <p>
       <%= form.label :rating_expiry_date %>:
-      <%= datepicker_input form, :packer_rating_date%>
+
+       <input type="text" data-provide='datepicker' >
+       
     </p>
       <%= form.label :team_status %>:
-      <%= form.check_box :packer_team, :type => "checkbox", :value => "1", :checked => "1"
+      <%= form.check_box :team, :type => "checkbox", :value => "1", :checked => "1"
  %>
     </p>
 
