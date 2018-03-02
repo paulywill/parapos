@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Running on C9 localhost:
+ rails s -b $IP -p $PORT

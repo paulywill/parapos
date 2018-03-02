@@ -18,6 +18,12 @@
 
   <div class="field">
     <p>
+      <%= form.label :team_status %>:
+      <%= form.check_box :team, :type => "checkbox", :value => "1", :checked => "1"
+ %>
+    </p>
+  
+    <p>
       <%= form.label :packer_name %>:
       <%= form.text_field :name %>
     </p>
@@ -28,10 +34,7 @@
        <input type="text" data-provide='datepicker' >
        
     </p>
-      <%= form.label :team_status %>:
-      <%= form.check_box :team, :type => "checkbox", :value => "1", :checked => "1"
- %>
-    </p>
+    
 
 
     <p>
