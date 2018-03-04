@@ -48,6 +48,6 @@ class PackersController < ApplicationController
 
   private
     def packer_params
-      params.require(:packer).permit(:packer_status, :packer_type_number)
+      params.require(:packer).permit(:team, :name, :rating_date)
     end
 end

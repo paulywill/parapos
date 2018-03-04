@@ -22,7 +22,7 @@
       <%= form.check_box :team, :type => "checkbox", :value => "1", :checked => "1"
  %>
     </p>
-  
+
     <p>
       <%= form.label :packer_name %>:
       <%= form.text_field :name %>
@@ -30,16 +30,21 @@
 
     <p>
       <%= form.label :rating_expiry_date %>:
-
-       <input type="text" data-provide='datepicker' >
-       
+      <%= form.text_field :rating_date, :class =>'datepicker' %>
     </p>
-    
+
 
 
     <p>
       <%= form.submit %>
     </p>
   </div>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.datepicker').datepicker();
+    });
+  </script>
+
 
 <% end %>

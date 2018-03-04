@@ -1,4 +1,5 @@
 class PackjobsController < ApplicationController
+
   def index
     @packjobs = Packjob.paginate(page: params[:page]).order('id DESC')
     #@rigs = Rig.where(rig_type_number: (packjobs:rig_id) )
