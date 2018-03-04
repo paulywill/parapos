@@ -20,7 +20,7 @@
     <%= form.label Time.now.strftime("%m/%d/%Y %I:%M:%S %P") %><br />
     <p>
       <%= form.label :packer %><br>
-      <%= form.text_field :packer %>
+      <%= form.collection_select(:packer_id, @packers, :id, :name,  {:include_blank => true}) %><br>
     </p>
 
     <p>
