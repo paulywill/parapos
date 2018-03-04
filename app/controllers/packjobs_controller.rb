@@ -10,7 +10,7 @@ class PackjobsController < ApplicationController
   def show
     @packjob = Packjob.find(params[:id])
     @rig = Rig.find(@packjob.rig_id)
-    @packers = Packer.find(@packjob.packer_id)
+    @packer = Packer.find(@packjob.packer_id)
   end
 
   def new
@@ -58,7 +58,7 @@ class PackjobsController < ApplicationController
 
   private
     def packjob_params
-      params.require(:packjob).permit(:packer, :rig_id)
+      params.require(:packjob).permit(:packer_id, :rig_id)
     end
 
     def rigs_params

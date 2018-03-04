@@ -10833,3 +10833,232 @@ Migrating to RemovePackerFromPackjob (20180304195930)
             FROM sqlite_temp_master
             WHERE name='index_packjobs_on_rig_id' AND type='index'
 [0m
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-04 15:16:17 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.6ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?[0m  [["packjob_id", 1], ["LIMIT", 1]]
+  Rendered packjobs/index.html.erb within layouts/application (48.3ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: packers.packjob_id: SELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?):
+    19:   <% @packjobs.each do |packjob| %>
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22:         <td><%= link_to packjob.packer.name,packer_path(packjob.packer_id) %> </td>
+    23:         <td><%= link_to packjob.rig.rig_type_number,rig_path(packjob.rig_id) %> </td>
+    24:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+    25:         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+  
+app/views/packjobs/index.html.erb:22:in `block in _app_views_packjobs_index_html_erb___4570923883884923819_70191590570600'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb___4570923883884923819_70191590570600'
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-04 15:20:12 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.6ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?[0m  [["packjob_id", 1], ["LIMIT", 1]]
+  Rendered packjobs/index.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: packers.packjob_id: SELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?):
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22: 
+    23:         <td><%= packjob.packer.name %> </td>
+    24: 
+    25:         <td><%= link_to packjob.rig.rig_type_number,rig_path(packjob.rig_id) %> </td>
+    26:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+  
+app/views/packjobs/index.html.erb:23:in `block in _app_views_packjobs_index_html_erb___4570923883884923819_70191582374880'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb___4570923883884923819_70191582374880'
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-04 15:23:11 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mRig Load (0.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."packjob_id" = ? LIMIT ?[0m  [["packjob_id", 1], ["LIMIT", 1]]
+  Rendered packjobs/index.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: rigs.packjob_id: SELECT  "rigs".* FROM "rigs" WHERE "rigs"."packjob_id" = ? LIMIT ?):
+    22: 
+    23:         <td><%= packjob.packer_id %> </td>
+    24: 
+    25:         <td><%= link_to packjob.rig.rig_type_number,rig_path(packjob.rig_id) %> </td>
+    26:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+    27:         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+    28:         <td><%= link_to 'Destroy', packjob_path(packjob),
+  
+app/views/packjobs/index.html.erb:25:in `block in _app_views_packjobs_index_html_erb___4570923883884923819_70191579486100'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb___4570923883884923819_70191579486100'
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-04 15:24:32 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.1ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPackjob Load (0.1ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 1828ms (Views: 1823.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-04 15:25:05 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (1.3ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?[0m  [["packjob_id", 1], ["LIMIT", 1]]
+  Rendered packjobs/index.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: packers.packjob_id: SELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?):
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22: 
+    23:         <td><%= packjob.packer.name %> </td>
+    24: 
+    25:         <td><%= packjob.rig.rig_type_number %> </td>
+    26:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+  
+app/views/packjobs/index.html.erb:23:in `block in _app_views_packjobs_index_html_erb___4570923883884923819_70191635703620'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb___4570923883884923819_70191635703620'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_packjobs_on_packer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_packjobs_on_packer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_packjobs_on_rig_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_packjobs_on_rig_id' AND type='index'
+[0m
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-04 15:25:31 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.1ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.5ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?[0m  [["packjob_id", 1], ["LIMIT", 1]]
+  Rendered packjobs/index.html.erb within layouts/application (16.9ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: packers.packjob_id: SELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?):
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22: 
+    23:         <td><%= packjob.packer.name %> </td>
+    24: 
+    25:         <td><%= packjob.rig.rig_type_number %> </td>
+    26:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+  
+app/views/packjobs/index.html.erb:23:in `block in _app_views_packjobs_index_html_erb___4570923883884923819_70191592070020'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb___4570923883884923819_70191592070020'
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-04 15:29:01 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.6ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?[0m  [["packjob_id", 1], ["LIMIT", 1]]
+  Rendered packjobs/index.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: packers.packjob_id: SELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?):
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22: 
+    23:         <td><%= packjob.packer.name %> </td>
+    24: 
+    25:         <td><%= packjob.rig.rig_type_number %> </td>
+    26:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+  
+app/views/packjobs/index.html.erb:23:in `block in _app_views_packjobs_index_html_erb___4570923883884923819_70191584856860'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb___4570923883884923819_70191584856860'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_packjobs_on_packer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_packjobs_on_packer_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_packjobs_on_rig_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_packjobs_on_rig_id' AND type='index'
+[0m
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-04 15:29:36 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.5ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?[0m  [["packjob_id", 1], ["LIMIT", 1]]
+  Rendered packjobs/index.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: packers.packjob_id: SELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?):
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22: 
+    23:         <td><%= packjob.packer.name %> </td>
+    24: 
+    25:         <td><%= packjob.rig.rig_type_number %> </td>
+    26:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+  
+app/views/packjobs/index.html.erb:23:in `block in _app_views_packjobs_index_html_erb___4570923883884923819_70191626026760'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb___4570923883884923819_70191626026760'
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-04 15:30:10 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.5ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?[0m  [["packjob_id", 1], ["LIMIT", 1]]
+  Rendered packjobs/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: packers.packjob_id: SELECT  "packers".* FROM "packers" WHERE "packers"."packjob_id" = ? LIMIT ?):
+    19:   <% @packjobs.each do |packjob| %>
+    20:   <tr class="<%= cycle('rowA', 'rowB') %>">
+    21:         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+    22:         <td><%= link_to packjob.packer.name,packer_path(packjob.packer_id) %> </td>
+    23:         <td><%= link_to packjob.rig.rig_type_number,rig_path(packjob.rig_id) %> </td>
+    24:         <td><%= link_to 'Show', packjob_path(packjob) %></td>
+    25:         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+  
+app/views/packjobs/index.html.erb:22:in `block in _app_views_packjobs_index_html_erb___4570923883884923819_70191580573220'
+app/views/packjobs/index.html.erb:19:in `_app_views_packjobs_index_html_erb___4570923883884923819_70191580573220'
