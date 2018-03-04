@@ -1,6 +1,7 @@
 class PackersController < ApplicationController
+
   def index
-    @packers = Packer.paginate(page: params[:page]).order('id DESC')
+    @packers = Packer.paginate(page: params[:page]).order('name ASC')
   end
 
   def show
