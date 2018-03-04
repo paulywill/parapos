@@ -1,0 +1,18 @@
+
+<p>
+  <strong>Team Status:</strong>
+  <%= @packer.team %>
+</p>
+
+<p>
+  <strong>Packer Name:</strong>
+  <%= @packer.name %>
+</p>
+
+<p>
+  <strong>Rating Expiry Date:</strong>
+  <%= @packer.rating_date %>
+</p>
+
+<%= link_to 'Edit', edit_packer_path(@packer) %> |
+<%= link_to 'Back', packers_path %>

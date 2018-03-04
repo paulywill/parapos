@@ -18,19 +18,22 @@ COMMENTS
 
   <% @packers.each do |packer| %>
     <tr class="<%= cycle('rowA', 'rowB') %>">
-      <td><%= packer.name %></td>
-      <td><%= packer.rating_date %></td>
-      <%
-  	   if (packer.team == true )
-  		     dcolor="TD BGCOLOR=#00ff00"
-  	   else
-  		     dcolor="TD BGCOLOR=red"
-  	   end %>
-       <td <%=dcolor%><%= team_display :boolStatus => packer.team %></td>
-       <td><%= link_to 'Show', rig %></td>
-       <td><%= link_to 'Edit', edit_rig_path(rig) %></td>
-       <td><%= link_to 'Destroy', rig, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-     </tr>
+    <%  if (packer.team == true )
+          dcolor="TD BGCOLOR=#00ff00"
+        else
+          dcolor="TD BGCOLOR=#ff0000"
+        end %>
+
+       <td><%= packer.name %></td>
+       <td><%= packer.rating_date %></td>
+       <td <%=dcolor%> >
+     		<%= team_display :boolStatus => packer.team %>
+     	</td>
+
+       <td><%= link_to 'Show', packer %></td>
+       <td><%= link_to 'Edit', edit_packer_path(packer) %></td>
+       <td><%= link_to 'Destroy', packer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
   <% end %>
 </table>
 
@@ -40,6 +43,7 @@ COMMENTS
 <%= link_to 'New Packer', new_packer_path %> |
 <%= link_to 'Packjobs', packjobs_path %> |
 <%= link_to 'Packers', packers_path %> |
+
 <%
 =begin %>
 <%= link_to 'Damages', damages_path %>
