@@ -1,7 +1,7 @@
 class Packjob < ApplicationRecord
 
-  has_one :rig
-  has_one :packer
+  belongs_to :rig
+  belongs_to :packer
   validates :packer_id, presence: true
   validates :rig_id, presence: true
 

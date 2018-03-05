@@ -20,7 +20,7 @@
   <tr class="<%= cycle('rowA', 'rowB') %>">
         <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
         <td><%= link_to packjob.packer.name,packer_path(packjob.packer_id) %> </td>
-        <td><%= link_to packjob.rig.rig_type_number,rig_path(packjob.rig_id) %> </td>
+        <td><%= link_to packjob.rig.rig_type_number,rig_path(packjob.rig_id) %></td>
         <td><%= link_to 'Show', packjob_path(packjob) %></td>
         <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
         <td><%= link_to 'Destroy', packjob_path(packjob),
@@ -37,4 +37,12 @@
   <%= will_paginate @packjobs,  :container => false %>
 </div>
 
-<br><%= link_to 'New Packjob', new_packjob_path %> |
+<br>
+<%= link_to 'New Packjob', new_packjob_path %> |
+<%= link_to 'Packers', packers_path %> |
+<%= link_to 'Rigs', rigs_path %> |
+<%
+=begin %>
+<%= link_to 'Damages', damages_path %>
+<%
+=end %>
