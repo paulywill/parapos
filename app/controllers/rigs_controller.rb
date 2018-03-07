@@ -1,7 +1,7 @@
 class RigsController < ApplicationController
 
   def index
-    @rigs = Rig.paginate(page: params[:page]).order('id DESC')
+    @rigs = Rig.paginate(page: params[:page]).order('rig_type_number ASC')
   end
 
   def show
