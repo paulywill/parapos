@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 20180307015115) do
   end
 
   create_table "packjobs", force: :cascade do |t|
-    t.bigint "packjob_id"
+    t.bigint "packer_id"
     t.bigint "rig_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["packjob_id"], name: "index_packjobs_on_packjob_id"
+    t.index ["packer_id"], name: "index_packjobs_on_packer_id"
     t.index ["rig_id"], name: "index_packjobs_on_rig_id"
   end
 
@@ -42,6 +42,6 @@ ActiveRecord::Schema.define(version: 20180307015115) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "packjobs", "packjobs"
+  add_foreign_key "packjobs", "packers"
   add_foreign_key "packjobs", "rigs"
 end

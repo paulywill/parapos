@@ -12410,3 +12410,417 @@ Processing by PackjobsController#index as HTML
 Completed 200 OK in 147ms (Views: 144.3ms | ActiveRecord: 0.8ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_development"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_development"[0m
+  [1m[35m (810.0ms)[0m  [1m[35mCREATE DATABASE "my_database_development" ENCODING = 'utf8'[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE DATABASE "my_database_development" ENCODING = 'utf8'[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (52.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5168794849566389475)[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRigs (20180212055144)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (45.1ms)[0m  [1m[35mCREATE TABLE "rigs" ("id" bigserial primary key, "rig_status" boolean, "rig_type_number" character varying, "rig_season_jumpnum" integer, "rig_res_last" date, "rig_res_who" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (5.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180212055144"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackers (20180223135808)
+  [1m[35m (41.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.2ms)[0m  [1m[35mCREATE TABLE "packers" ("id" bigserial primary key, "name" character varying, "rating_date" date, "team" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180223135808"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackjobs (20180307015115)
+  [1m[35m (88.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "packjobs" ("id" bigserial primary key, "packjob_id" bigint, "rig_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4789acacc0"
+FOREIGN KEY ("packjob_id")
+  REFERENCES "packjobs" ("id")
+, CONSTRAINT "fk_rails_159465aa47"
+FOREIGN KEY ("rig_id")
+  REFERENCES "rigs" ("id")
+)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE  INDEX  "index_packjobs_on_packjob_id" ON "packjobs"  ("packjob_id")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_packjobs_on_rig_id" ON "packjobs"  ("rig_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180307015115"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-08 10:48:51.920735"], ["updated_at", "2018-03-08 10:48:51.920735"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5168794849566389475)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/packjobs" for 127.0.0.1 at 2018-03-08 05:49:18 -0500
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackjobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K6GzMAckkqomGBP9svN3GHisFzbB0kRBxFUZDo9HJCSj8RU6kCbg+iQKP7M0RCZTj4Cn7dPdliQYlM5Sl04e8Q==", "packjob"=>{"packer_id"=>"2", "rig_id"=>"1"}, "commit"=>"Create Packjob"}
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 15.9ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'packer_id' for Packjob.):
+  
+app/controllers/packjobs_controller.rb:29:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-08 05:49:25 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (76.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (2.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (114.9ms)
+Completed 200 OK in 3529ms (Views: 2167.2ms | ActiveRecord: 957.0ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-08 05:49:33 -0500
+Processing by PackersController#index as HTML
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (18.4ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 983ms (Views: 956.1ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/packers/new" for 127.0.0.1 at 2018-03-08 05:49:36 -0500
+Processing by PackersController#new as HTML
+  Rendering packers/new.html.erb within layouts/application
+  Rendered packers/_form.html.erb (28.7ms)
+  Rendered packers/new.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 1169ms (Views: 1125.1ms | ActiveRecord: 18.4ms)
+
+
+Started POST "/packers" for 127.0.0.1 at 2018-03-08 05:49:54 -0500
+Processing by PackersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RlAYybanrJVX2XjWNopGXfaVvJMKlKNoTJ0k4/Pk7mjOAL7DIaXexVXLVJiwPRcWAbkMSBibcQ2QXPO/6+3UvQ==", "packer"=>{"team"=>"1", "name"=>"Paul Gamble", "rating_date"=>"2019/03/31"}, "commit"=>"Create Packer"}
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (43.8ms)[0m  [1m[32mINSERT INTO "packers" ("name", "rating_date", "team", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Paul Gamble"], ["rating_date", "2019-03-31"], ["team", "t"], ["created_at", "2018-03-08 10:49:54.907263"], ["updated_at", "2018-03-08 10:49:54.907263"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/packers/1
+Completed 302 Found in 57ms (ActiveRecord: 47.4ms)
+
+
+Started GET "/packers/1" for 127.0.0.1 at 2018-03-08 05:49:54 -0500
+Processing by PackersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPacker Load (0.5ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/show.html.erb within layouts/application
+  Rendered packers/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 459ms (Views: 445.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-08 05:50:00 -0500
+Processing by PackersController#index as HTML
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (3.4ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 874ms (Views: 862.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-08 05:50:03 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (4.8ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 502ms (Views: 489.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-03-08 05:50:05 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (4.0ms)
+  Rendered rigs/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 520ms (Views: 474.6ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/rigs" for 127.0.0.1 at 2018-03-08 05:50:16 -0500
+Processing by RigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fhuV2oJ9hAdkeyZCwONWYh2MGOmt0tK72MpeoPcPiWv2SzPQFX/2V2ZpCgxGVAcp6qCoMr/dAN4EC4n87wazvg==", "rig"=>{"rig_status"=>"1", "rig_type_number"=>"Sigma #1"}, "commit"=>"Create Rig"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.9ms)[0m  [1m[32mINSERT INTO "rigs" ("rig_status", "rig_type_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["rig_status", "t"], ["rig_type_number", "Sigma #1"], ["created_at", "2018-03-08 10:50:16.038255"], ["updated_at", "2018-03-08 10:50:16.038255"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/rigs/1
+Completed 302 Found in 27ms (ActiveRecord: 17.8ms)
+
+
+Started GET "/rigs/1" for 127.0.0.1 at 2018-03-08 05:50:16 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRig Load (1.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/show.html.erb within layouts/application
+  Rendered rigs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 332ms (Views: 316.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-08 05:50:18 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.8ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 462ms (Views: 454.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-08 05:50:23 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.1ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 393ms (Views: 384.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-03-08 05:50:25 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  [1m[36mPacker Load (0.8ms)[0m  [1m[34mSELECT "packers".* FROM "packers" WHERE "packers"."team" = $1[0m  [["team", "t"]]
+  [1m[36mRig Load (2.1ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."rig_status" = $1[0m  [["rig_status", "t"]]
+  Rendered packjobs/_form.html.erb (14.4ms)
+  Rendered packjobs/new.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 303ms (Views: 288.1ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/packjobs" for 127.0.0.1 at 2018-03-08 05:50:32 -0500
+Processing by PackjobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rCJpRVXEpqyrB9JY64jM+eFhOdjYQ/rJ1UmPqcqr8W8kcs9PwsbU/KkV/hZtP52yFk2JA8pMKKwJiFj10qLLug==", "packjob"=>{"packer_id"=>"1", "rig_id"=>"1"}, "commit"=>"Create Packjob"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'packer_id' for Packjob.):
+  
+app/controllers/packjobs_controller.rb:29:in `create'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8513.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_development"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "parapos_database"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "parapos_database"[0m
+  [1m[35m (679.5ms)[0m  [1m[35mCREATE DATABASE "parapos_database" ENCODING = 'utf8'[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "parapos_database" ENCODING = 'utf8'[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (35.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8130338731986845745)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRigs (20180212055144)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (51.4ms)[0m  [1m[35mCREATE TABLE "rigs" ("id" bigserial primary key, "rig_status" boolean, "rig_type_number" character varying, "rig_season_jumpnum" integer, "rig_res_last" date, "rig_res_who" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180212055144"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackers (20180223135808)
+  [1m[35m (23.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (34.7ms)[0m  [1m[35mCREATE TABLE "packers" ("id" bigserial primary key, "name" character varying, "rating_date" date, "team" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180223135808"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackjobs (20180307015115)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.3ms)[0m  [1m[35mCREATE TABLE "packjobs" ("id" bigserial primary key, "packer_id" bigint, "rig_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b0d79f19bf"
+FOREIGN KEY ("packer_id")
+  REFERENCES "packers" ("id")
+, CONSTRAINT "fk_rails_159465aa47"
+FOREIGN KEY ("rig_id")
+  REFERENCES "rigs" ("id")
+)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_packjobs_on_packer_id" ON "packjobs"  ("packer_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_packjobs_on_rig_id" ON "packjobs"  ("rig_id")[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180307015115"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-08 10:55:23.362283"], ["updated_at", "2018-03-08 10:55:23.362283"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8130338731986845745)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-08 05:56:06 -0500
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (44.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (2.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (84.4ms)
+Completed 200 OK in 2159ms (Views: 2012.3ms | ActiveRecord: 67.4ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-08 05:56:13 -0500
+Processing by PackersController#index as HTML
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (6.7ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 860ms (Views: 805.3ms | ActiveRecord: 47.8ms)
+
+
+Started GET "/packers/new" for 127.0.0.1 at 2018-03-08 05:56:16 -0500
+Processing by PackersController#new as HTML
+  Rendering packers/new.html.erb within layouts/application
+  Rendered packers/_form.html.erb (28.6ms)
+  Rendered packers/new.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 575ms (Views: 545.1ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/packers" for 127.0.0.1 at 2018-03-08 05:57:02 -0500
+Processing by PackersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jizQZwxPTts4Qp6Ot5NkFqAMOPllMB6hvKYmdBlbdZIGfHZtm008izpQssAxJDVdVyCIInc/zMRgZ/EoAVJPRw==", "packer"=>{"team"=>"1", "name"=>"Paul Gamble", "rating_date"=>"2019/03/31"}, "commit"=>"Create Packer"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (42.1ms)[0m  [1m[32mINSERT INTO "packers" ("name", "rating_date", "team", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Paul Gamble"], ["rating_date", "2019-03-31"], ["team", "t"], ["created_at", "2018-03-08 10:57:02.137180"], ["updated_at", "2018-03-08 10:57:02.137180"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/packers/1
+Completed 302 Found in 52ms (ActiveRecord: 45.2ms)
+
+
+Started GET "/packers/1" for 127.0.0.1 at 2018-03-08 05:57:02 -0500
+Processing by PackersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPacker Load (0.5ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/show.html.erb within layouts/application
+  Rendered packers/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 321ms (Views: 308.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-08 05:57:04 -0500
+Processing by PackersController#index as HTML
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (3.2ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 410ms (Views: 399.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-08 05:57:07 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (3.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 530ms (Views: 521.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/rigs/new" for 127.0.0.1 at 2018-03-08 05:57:10 -0500
+Processing by RigsController#new as HTML
+  Rendering rigs/new.html.erb within layouts/application
+  Rendered rigs/_form.html.erb (4.2ms)
+  Rendered rigs/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 421ms (Views: 380.5ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/rigs" for 127.0.0.1 at 2018-03-08 05:57:16 -0500
+Processing by RigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TV8Ra4GtB+j/bBbgU2WUsp27eEHQw5ODJVlvuxYe2e/FD7dhFq91uP1+Oq7V0sX5apfImsLMQeb5mLjnDhfjOg==", "rig"=>{"rig_status"=>"1", "rig_type_number"=>"Sigma #1"}, "commit"=>"Create Rig"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "rigs" ("rig_status", "rig_type_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["rig_status", "t"], ["rig_type_number", "Sigma #1"], ["created_at", "2018-03-08 10:57:16.484403"], ["updated_at", "2018-03-08 10:57:16.484403"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/rigs/1
+Completed 302 Found in 16ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/rigs/1" for 127.0.0.1 at 2018-03-08 05:57:16 -0500
+Processing by RigsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRig Load (1.1ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/show.html.erb within layouts/application
+  Rendered rigs/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 573ms (Views: 559.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-08 05:57:18 -0500
+Processing by RigsController#index as HTML
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (1.8ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 409ms (Views: 401.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-08 05:57:21 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.7ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 481ms (Views: 469.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/packjobs/new" for 127.0.0.1 at 2018-03-08 05:57:25 -0500
+Processing by PackjobsController#new as HTML
+  Rendering packjobs/new.html.erb within layouts/application
+  [1m[36mPacker Load (1.0ms)[0m  [1m[34mSELECT "packers".* FROM "packers" WHERE "packers"."team" = $1[0m  [["team", "t"]]
+  [1m[36mRig Load (0.9ms)[0m  [1m[34mSELECT "rigs".* FROM "rigs" WHERE "rigs"."rig_status" = $1[0m  [["rig_status", "t"]]
+  Rendered packjobs/_form.html.erb (13.5ms)
+  Rendered packjobs/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 297ms (Views: 257.7ms | ActiveRecord: 9.2ms)
+
+
+Started POST "/packjobs" for 127.0.0.1 at 2018-03-08 05:57:32 -0500
+Processing by PackjobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4QxP+vAXlVabmWWdY43X9kVY2AGkbaBFirWsBSFFmOxpXOnwZxXnBpmLSdPlOoa9snRo2rZiciBWdHtZOUyiOQ==", "packjob"=>{"packer_id"=>"1", "rig_id"=>"1"}, "commit"=>"Create Packjob"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRig Load (0.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPacker Load (0.6ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "packjobs" ("packer_id", "rig_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["packer_id", 1], ["rig_id", 1], ["created_at", "2018-03-08 10:57:32.211082"], ["updated_at", "2018-03-08 10:57:32.211082"]]
+  [1m[35m (42.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/packjobs/1
+Completed 302 Found in 89ms (ActiveRecord: 48.7ms)
+
+
+Started GET "/packjobs/1" for 127.0.0.1 at 2018-03-08 05:57:32 -0500
+Processing by PackjobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPackjob Load (1.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" WHERE "packjobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.6ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPacker Load (0.8ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/show.html.erb within layouts/application
+  Rendered packjobs/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 247ms (Views: 232.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-08 05:57:34 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.9ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (7.2ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (1.1ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (6.0ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 479ms (Views: 440.9ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-08 06:02:40 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.0ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.6ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 491ms (Views: 483.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-08 06:03:33 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.5ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 578ms (Views: 569.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-08 06:04:10 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (1.1ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.8ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 535ms (Views: 528.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-08 06:04:37 -0500
+Processing by PackjobsController#index as HTML
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (1.0ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (1.1ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.9ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 516ms (Views: 508.2ms | ActiveRecord: 4.3ms)
+
+
