@@ -37,17 +37,21 @@ gem 'will_paginate', '>= 3.1'
 gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
-gem 'jquery-rails'  
+gem 'jquery-rails'
+gem 'devise'
+
+
+
 
 group :production do
   gem 'pg'
 end
 
 group :development, :test do
-  
+
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
@@ -57,7 +61,7 @@ end
 
 group :development do
 
-  
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

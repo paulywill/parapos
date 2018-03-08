@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'packjobs/index'
 
   resources :packjobs do
