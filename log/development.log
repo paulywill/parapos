@@ -13726,3 +13726,560 @@ Processing by PackjobsController#index as HTML
 Completed 200 OK in 480ms (Views: 467.5ms | ActiveRecord: 4.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-14 00:03:07 -0400
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (2.1ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (1.9ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (2.1ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (186.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (19.6ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 9264ms (Views: 9044.7ms | ActiveRecord: 70.9ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-14 00:11:23 -0400
+Processing by RigsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (2.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (10.8ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 515ms (Views: 472.5ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:11:30 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (1.3ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (2.2ms)
+  Rendered layouts/_navigation.html.erb (21.9ms)
+  Rendered layouts/_messages.html.erb (1.6ms)
+Completed 200 OK in 424ms (Views: 410.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:11:33 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.9ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.9ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (1.2ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (24.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (19.7ms)
+  Rendered layouts/_messages.html.erb (1.5ms)
+Completed 200 OK in 386ms (Views: 372.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-14 00:11:37 -0400
+Processing by RigsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (13.2ms)
+  Rendered layouts/_messages.html.erb (1.4ms)
+Completed 200 OK in 465ms (Views: 454.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:11:40 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.7ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (1.2ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (1.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.8ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (10.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 299ms (Views: 284.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-14 00:11:48 -0400
+Processing by RigsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (1.4ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (12.1ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 270ms (Views: 259.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:11:58 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (12.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (1.3ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.9ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.9ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (34.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (13.2ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 302ms (Views: 277.1ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:13:13 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.6ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (15.9ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 2526ms (Views: 2514.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:13:55 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.8ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (1.3ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (20.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (16.6ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 2418ms (Views: 2404.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:14:08 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (0.8ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navigation_links.html.erb (56.3ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (70.4ms)
+  Rendered layouts/_messages.html.erb (1.3ms)
+Completed 200 OK in 432ms (Views: 422.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:14:13 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.8ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.5ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (16.0ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 406ms (Views: 394.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:14:17 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (0.8ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (13.0ms)
+  Rendered layouts/_navigation.html.erb (28.8ms)
+  Rendered layouts/_messages.html.erb (1.3ms)
+Completed 200 OK in 395ms (Views: 386.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:14:22 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.6ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.6ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (9.3ms)
+  Rendered layouts/_messages.html.erb (1.3ms)
+Completed 200 OK in 271ms (Views: 260.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:15:06 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.7ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.7ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (13.5ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 2453ms (Views: 2441.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:15:37 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.9ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.9ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_navigation_links.html.erb (6.9ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (24.1ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 2595ms (Views: 2582.0ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:15:50 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (1.0ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (13.0ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 338ms (Views: 328.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:15:54 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.9ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (20.5ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 453ms (Views: 440.4ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:17:07 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.5ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.6ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (13.5ms)
+  Rendered layouts/_messages.html.erb (1.6ms)
+Completed 200 OK in 318ms (Views: 307.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:19:28 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (1.0ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (11.5ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 299ms (Views: 289.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:19:32 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.6ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.6ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (13.2ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 297ms (Views: 286.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:23:22 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.7ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (10.5ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 2300ms (Views: 2289.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:23:35 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (0.7ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (14.0ms)
+  Rendered layouts/_messages.html.erb (1.3ms)
+Completed 200 OK in 323ms (Views: 312.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/packers/new" for 127.0.0.1 at 2018-03-14 00:23:39 -0400
+Processing by PackersController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/new.html.erb within layouts/application
+  Rendered packers/_form.html.erb (19.6ms)
+  Rendered packers/new.html.erb within layouts/application (25.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (12.6ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 322ms (Views: 312.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:23:49 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (0.7ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (15.8ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 339ms (Views: 329.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:24:02 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.5ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.6ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (2.7ms)
+  Rendered layouts/_navigation.html.erb (16.2ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 294ms (Views: 279.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:25:09 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.6ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.6ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (12.5ms)
+  Rendered layouts/_messages.html.erb (1.6ms)
+Completed 200 OK in 2457ms (Views: 2445.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:25:15 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (0.7ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (11.9ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 277ms (Views: 265.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-14 00:25:24 -0400
+Processing by RigsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.9ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (12.8ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 280ms (Views: 267.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:25:29 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.8ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.7ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.9ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.7ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (11.2ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 283ms (Views: 270.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-14 00:26:21 -0400
+Processing by RigsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.9ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (14.1ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 308ms (Views: 290.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:26:30 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (1.9ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (13.2ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 300ms (Views: 289.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-03-14 00:27:16 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (0.7ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (9.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 2474ms (Views: 2464.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-03-14 00:27:26 -0400
+Processing by RigsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (0.8ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (11.5ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 298ms (Views: 288.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:27:30 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.3ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (1.0ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.4ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (12.0ms)
+  Rendered layouts/_messages.html.erb (1.5ms)
+Completed 200 OK in 270ms (Views: 258.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-03-14 00:27:59 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/registrations/edit.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (11.8ms)
+  Rendered layouts/_messages.html.erb (1.2ms)
+Completed 200 OK in 290ms (Views: 286.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-03-14 00:28:06 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.0ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.9ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (14.7ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 287ms (Views: 273.7ms | ActiveRecord: 4.8ms)
+
+

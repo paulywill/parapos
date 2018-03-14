@@ -82,7 +82,11 @@ section {
 }
 
 #listtable th{
-	color: black;
+	color: white;
+  background: #2e6ab1;
+  font-weight: normal;
+  padding:5px;
+
 }
 
 #listtable tr.headerBlue{
