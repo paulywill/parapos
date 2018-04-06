@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.5.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -38,37 +39,44 @@ gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 gem 'jquery-rails'
+gem 'pg'
 gem 'devise'
 gem 'pundit'
 
-
-
-group :production do
-  gem 'pg'
-end
-
-group :development, :test do
-
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-end
-
 group :development do
-
-
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors'
+  gem 'rails_layout'
+  gem 'spring-commands-rspec'
 end
+
+
+group :development, :test do
+
+  # Use sqlite3 as the database for Active Record
+
+
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'launchy'
+end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

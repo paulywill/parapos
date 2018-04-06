@@ -2,6 +2,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+a:link{
+    text-decoration: none;
+    color: black;
+}
+
+    a:visited{
+    color: black;
+    text-decoration: none;
+}
+    a:hover{
+    color: #FFF;
+    background: blue;
+}​
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
