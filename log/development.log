@@ -14676,3 +14676,273 @@ Processing by PackjobsController#index as HTML
 Completed 200 OK in 1594ms (Views: 1579.0ms | ActiveRecord: 5.5ms)
 
 
+Started GET "/rigs" for 127.0.0.1 at 2018-04-13 23:11:34 -0400
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RigsController#index as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (43.3ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (85.7ms)
+  Rendered layouts/_navigation_links.html.erb (2.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (3.1ms)
+  Rendered layouts/_navigation.html.erb (18.6ms)
+  Rendered layouts/_messages.html.erb (1.9ms)
+Completed 200 OK in 1069ms (Views: 866.0ms | ActiveRecord: 118.9ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-04-13 23:11:43 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (46.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (1.1ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (3.9ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.9ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Packer Load (0.0ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Rig Load (0.0ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.8ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (713.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (13.1ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 992ms (Views: 898.6ms | ActiveRecord: 69.2ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-04-13 23:11:47 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (1.0ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (7.6ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 244ms (Views: 234.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/packjobs" for 127.0.0.1 at 2018-04-13 23:11:52 -0400
+Processing by PackjobsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packjobs/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "packjobs"[0m
+  [1m[36mPackjob Load (0.5ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  [1m[36mPacker Load (0.8ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRig Load (0.7ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Packer Load (0.0ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" WHERE "packers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Rig Load (0.0ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" WHERE "rigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPackjob Load (0.6ms)[0m  [1m[34mSELECT  "packjobs".* FROM "packjobs" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendered packjobs/index.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.2ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (6.6ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 216ms (Views: 204.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-04-13 23:12:00 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (0.7ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (10.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 220ms (Views: 210.9ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-04-13 23:14:53 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PeV9HA15uJN68d5JNli+i0WoxEAuqwTuumDCyFkv7rq1tdsWmnvKw3jj8gew7+/AsoR0mzyk1otmoRWUQSbUbw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (41.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 52ms (ActiveRecord: 42.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 23:14:53 -0400
+Processing by PackjobsController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-13 23:14:53 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (26.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (2.4ms)
+  Rendered layouts/_navigation.html.erb (14.1ms)
+  Rendered layouts/_messages.html.erb (1.2ms)
+Completed 200 OK in 339ms (Views: 335.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 23:14:56 -0400
+Processing by PackjobsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-13 23:14:56 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (13.6ms)
+  Rendered layouts/_messages.html.erb (2.2ms)
+Completed 200 OK in 309ms (Views: 304.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 23:15:00 -0400
+Processing by PackjobsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-13 23:15:00 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (12.3ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 277ms (Views: 274.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 23:15:01 -0400
+Processing by PackjobsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-13 23:15:01 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (9.2ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 257ms (Views: 254.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-13 23:15:04 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (2.7ms)
+  Rendered layouts/_navigation.html.erb (12.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 275ms (Views: 273.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-04-13 23:20:59 -0400
+Processing by RigsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-13 23:20:59 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (7.0ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (33.7ms)
+  Rendered layouts/_navigation_links.html.erb (0.4ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (5.0ms)
+  Rendered layouts/_navigation.html.erb (15.4ms)
+  Rendered layouts/_messages.html.erb (5.5ms)
+Completed 200 OK in 717ms (Views: 701.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 23:21:01 -0400
+Processing by PackjobsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-13 23:21:01 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (3.9ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (28.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (58.3ms)
+  Rendered layouts/_navigation.html.erb (102.7ms)
+  Rendered layouts/_messages.html.erb (7.8ms)
+Completed 200 OK in 647ms (Views: 643.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-04-14 00:06:22 -0400
+Processing by RigsController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-14 00:06:22 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (3.1ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (34.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (9.9ms)
+  Rendered layouts/_messages.html.erb (2.0ms)
+Completed 200 OK in 554ms (Views: 538.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-14 00:06:23 -0400
+Processing by PackjobsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-14 00:06:23 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (3.0ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (18.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.3ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (8.0ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 421ms (Views: 418.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-04-14 10:13:08 -0400
+Processing by RigsController#index as HTML
+Completed 401 Unauthorized in 107ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-14 10:13:09 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (61.4ms)
+Started GET "/" for 127.0.0.1 at 2018-04-14 10:13:10 -0400
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (348.6ms)
+Processing by PackjobsController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-14 10:13:10 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/shared/_links.html.erb (6.5ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.1/app/views/devise/sessions/new.html.erb within layouts/application (65.1ms)
+  Rendered layouts/_navigation_links.html.erb (5.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (9.7ms)
+  Rendered layouts/_navigation.html.erb (90.0ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (51.0ms)
+  Rendered layouts/_navigation.html.erb (129.6ms)
+  Rendered layouts/_messages.html.erb (2.2ms)
+Completed 200 OK in 3834ms (Views: 3731.3ms | ActiveRecord: 0.0ms)
+
+
+  Rendered layouts/_messages.html.erb (15.2ms)
+Completed 200 OK in 3003ms (Views: 2997.7ms | ActiveRecord: 0.0ms)
+
+
