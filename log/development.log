@@ -14946,3 +14946,19 @@ Completed 200 OK in 3834ms (Views: 3731.3ms | ActiveRecord: 0.0ms)
 Completed 200 OK in 3003ms (Views: 2997.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-25 14:18:16 -0400
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/012916144a445a16/variables" for 127.0.0.1 at 2018-04-25 14:18:17 -0400
+Started GET "/" for 127.0.0.1 at 2018-04-25 14:18:23 -0400
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/f2cb5baf40123560/variables" for 127.0.0.1 at 2018-04-25 14:18:23 -0400
