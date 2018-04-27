@@ -14962,3 +14962,182 @@ PG::ConnectionBad - could not connect to server: No such file or directory
 :
 
 Started POST "/__better_errors/f2cb5baf40123560/variables" for 127.0.0.1 at 2018-04-25 14:18:23 -0400
+Started GET "/rigs" for 127.0.0.1 at 2018-04-27 15:38:50 -0400
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/64ae43230601782d/variables" for 127.0.0.1 at 2018-04-27 15:38:51 -0400
+Started GET "/" for 127.0.0.1 at 2018-04-27 15:39:10 -0400
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+:
+
+Started POST "/__better_errors/a7b990cd89dd6d1f/variables" for 127.0.0.1 at 2018-04-27 15:39:11 -0400
+Started GET "/" for 127.0.0.1 at 2018-04-27 15:47:25 -0400
+
+PG::ConnectionBad - FATAL:  database "parapos_database" does not exist
+:
+
+Started POST "/__better_errors/d9022790a641f632/variables" for 127.0.0.1 at 2018-04-27 15:47:26 -0400
+Started GET "/" for 127.0.0.1 at 2018-04-27 15:47:58 -0400
+
+PG::ConnectionBad - FATAL:  database "parapos_database" does not exist
+:
+
+Started POST "/__better_errors/35e74d4aa4627539/variables" for 127.0.0.1 at 2018-04-27 15:47:59 -0400
+Started POST "/__better_errors/35e74d4aa4627539/variables" for 127.0.0.1 at 2018-04-27 15:48:26 -0400
+Started POST "/__better_errors/35e74d4aa4627539/variables" for 127.0.0.1 at 2018-04-27 15:48:29 -0400
+Started POST "/__better_errors/35e74d4aa4627539/variables" for 127.0.0.1 at 2018-04-27 15:48:33 -0400
+  [1m[35m (28.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (29.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8130338731986845745)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRigs (20180212055144)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE "rigs" ("id" bigserial primary key, "rig_status" boolean, "rig_type_number" character varying, "rig_season_jumpnum" integer, "rig_res_last" date, "rig_res_who" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180212055144"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackers (20180223135808)
+  [1m[35m (40.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "packers" ("id" bigserial primary key, "name" character varying, "rating_date" date, "team" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180223135808"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePackjobs (20180307015115)
+  [1m[35m (40.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "packjobs" ("id" bigserial primary key, "packer_id" bigint, "rig_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b0d79f19bf"
+FOREIGN KEY ("packer_id")
+  REFERENCES "packers" ("id")
+, CONSTRAINT "fk_rails_159465aa47"
+FOREIGN KEY ("rig_id")
+  REFERENCES "rigs" ("id")
+)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_packjobs_on_packer_id" ON "packjobs"  ("packer_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_packjobs_on_rig_id" ON "packjobs"  ("rig_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180307015115"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20180308114056)
+  [1m[35m (39.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" character varying, "locked_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180308114056"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-27 19:50:00.534083"], ["updated_at", "2018-04-27 19:50:00.534083"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8130338731986845745)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rigs" for 127.0.0.1 at 2018-04-27 15:58:54 -0400
+  [1m[35m (42.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RigsController#index as HTML
+Completed 401 Unauthorized in 41ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-27 15:58:55 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (31.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (2.5ms)
+  Rendered layouts/_navigation.html.erb (19.6ms)
+  Rendered layouts/_messages.html.erb (1.9ms)
+Completed 200 OK in 8501ms (Views: 8436.5ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-27 15:59:08 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qeD5Ar4H5O6D9iCeYziU8rpM5Qnu44PYLX/+rKAByXR8WHxbzCxvJQLAEBd3AQWfkQvvWfY6iWv2kVo5PIP/eg==", "user"=>{"email"=>"pgamble@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (83.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "pgamble@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 98ms (ActiveRecord: 83.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qeD5Ar4H5O6D9iCeYziU8rpM5Qnu44PYLX/+rKAByXR8WHxbzCxvJQLAEBd3AQWfkQvvWfY6iWv2kVo5PIP/eg==", "user"=>{"email"=>"pgamble@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (18.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.3ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (12.7ms)
+  Rendered layouts/_messages.html.erb (1.3ms)
+Completed 200 OK in 669ms (Views: 405.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-27 15:59:16 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J3QDocyLbX/vvYpgIZuW26b18wycJUeFziu/Amo1A1jyzIb4vqDmtG6Luuk1oge2jbL5XIT8TTYVxRuX9rc1Vg==", "user"=>{"email"=>"pgamble@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "pgamble@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 1.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J3QDocyLbX/vvYpgIZuW26b18wycJUeFziu/Amo1A1jyzIb4vqDmtG6Luuk1oge2jbL5XIT8TTYVxRuX9rc1Vg==", "user"=>{"email"=>"pgamble@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/sessions/new.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.6ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (12.5ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 662ms (Views: 448.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-27 15:59:20 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/paulgamble/.rvm/gems/ruby-2.5.0/gems/devise-4.4.3/app/views/devise/registrations/new.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (18.1ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 396ms (Views: 392.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-27 15:59:34 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mqZoGwNQlmdcv18fd2QfypJnSxg/cWWEzogybLCbOcxPHu1CcXsdrN2Jb5ZjXY6nuSBBSCeobzcVZpb5LBkPwg==", "user"=>{"email"=>"pgamble@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pgamble@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (41.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "pgamble@gmail.com"], ["encrypted_password", "$2a$11$Bydn2jv3FgUtJGw01Z/8yu/xCE3f8paUgz.9s4JuGfz/AFExL/yU."], ["created_at", "2018-04-27 19:59:34.610067"], ["updated_at", "2018-04-27 19:59:34.610067"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-04-27 19:59:34.655874"], ["last_sign_in_at", "2018-04-27 19:59:34.655874"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-04-27 19:59:34.657078"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/rigs
+Completed 302 Found in 229ms (ActiveRecord: 45.3ms)
+
+
+Started GET "/rigs" for 127.0.0.1 at 2018-04-27 15:59:34 -0400
+Processing by RigsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering rigs/index.html.erb within layouts/application
+  [1m[36mRig Load (2.5ms)[0m  [1m[34mSELECT  "rigs".* FROM "rigs" ORDER BY rig_type_number ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered rigs/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.5ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (2.0ms)
+  Rendered layouts/_navigation.html.erb (13.9ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 354ms (Views: 328.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/packers" for 127.0.0.1 at 2018-04-27 15:59:38 -0400
+Processing by PackersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering packers/index.html.erb within layouts/application
+  [1m[36mPacker Load (1.4ms)[0m  [1m[34mSELECT  "packers".* FROM "packers" ORDER BY name ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered packers/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_nav_links_for_auth.html.erb (30.8ms)
+  Rendered layouts/_navigation.html.erb (49.1ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 514ms (Views: 497.3ms | ActiveRecord: 4.3ms)
+
+

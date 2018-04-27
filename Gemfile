@@ -36,8 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # https://rubyplus.com/articles/3471-Will-Paginate-in-Rails-5
 gem 'will_paginate', '>= 3.1'
 gem 'bootstrap-sass'
-gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
-                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem 'bootstrap-datepicker-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'devise'
@@ -67,7 +66,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
 end
