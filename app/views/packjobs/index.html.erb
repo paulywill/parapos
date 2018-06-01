@@ -1,50 +1,55 @@
-<h1>Listing Packjobs</h1>
+<div class="container-fluid">
+    <h1 class="text-center">Listing Packjobs</h1>
+    <div class="text-center">
+    <%= link_to 'New Packjob', new_packjob_path %> | <br>
+    </div>
+    <br>
 
-<%= link_to 'New Packjob', new_packjob_path %> | <br>
+    <div class="digg_pagination">
+    <%= will_paginate @packjobs, :container => false %>
+    </div>
 
-<br>
+    <div class="text-center">
+    <table id=listtable CELLPADDING="4" border="1" class="table" >
+      <tr class="headerBlue" >
+        <th>Datestamp</th>
+        <th>Packer</th>
+        <th>Rig</th>
+        <th colspan="3"></th>
+      </tr>
 
-<div class="digg_pagination">
-  <%= will_paginate @packjobs, :container => false %>
+      <% @packjobs.each do |packjob| %>
+      <tr class="<%= cycle('rowA', 'rowB') %>">
+        <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
+        <td><%= link_to packjob.packer.name,packer_path(packjob.packer_id) %> </td>
+        <td><%= link_to packjob.rig.rig_type_number,rig_path(packjob.rig_id) %></td>
+        <td><%= link_to 'Show', packjob_path(packjob) %></td>
+        <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+        <td><%= link_to 'Destroy', packjob_path(packjob),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td colspan = '100%'>
+          <div class="digg_pagination">
+            <div class="page_info">
+              <%= page_entries_info @packjobs %>
+            </div>
+            <%= will_paginate @packjobs,  :container => false %>
+          </div>
+        </td>
+      </tr>
+    </table>
+    </div>
+
+    <div class="text-center">
+    <br>
+    <%= link_to 'New Packjob', new_packjob_path %> |
+    <%= link_to 'Packers', packers_path %> |
+    <%= link_to 'Rigs', rigs_path %> |
+    </div>
 </div>
-
-<table id=listtable CELLPADDING="4" border="1">
-  <tr class="headerBlue" >
-    <th>Datestamp</th>
-    <th>Packer</th>
-    <th>Rig</th>
-    <th colspan="3"></th>
-  </tr>
-
-  <% @packjobs.each do |packjob| %>
-  <tr class="<%= cycle('rowA', 'rowB') %>">
-    <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
-    <td><%= link_to packjob.packer.name,packer_path(packjob.packer_id) %> </td>
-    <td><%= link_to packjob.rig.rig_type_number,rig_path(packjob.rig_id) %></td>
-    <td><%= link_to 'Show', packjob_path(packjob) %></td>
-    <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
-    <td><%= link_to 'Destroy', packjob_path(packjob),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-  <tr>
-    <td colspan = '100%'>
-      <div class="digg_pagination">
-        <div class="page_info">
-          <%= page_entries_info @packjobs %>
-        </div>
-        <%= will_paginate @packjobs,  :container => false %>
-      </div>
-    </td>
-  </tr>
-</table>
-
-
-<br>
-<%= link_to 'New Packjob', new_packjob_path %> |
-<%= link_to 'Packers', packers_path %> |
-<%= link_to 'Rigs', rigs_path %> |
 <%
 =begin %>
 <%= link_to 'Damages', damages_path %>

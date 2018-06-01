@@ -4,7 +4,7 @@
 
   <% if @packjob.errors.any? %>
     <div id="error_explanation">
-      <h2>
+      <h2 class="text-center">
         <%= pluralize(@packjob.errors.count, "error") %> prohibited
         this packjob from being saved:
       </h2>
@@ -16,7 +16,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="form-group">
     <%= form.label Time.now.strftime("%m/%d/%Y %I:%M:%S %P") %><br />
     <p>
       <%= form.label :packer %><br>
@@ -31,6 +31,7 @@
     <p>
       <%= form.submit %>
     </p>
-  </div>
+
+</div>
 
 <% end %>
