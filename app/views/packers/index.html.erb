@@ -1,48 +1,47 @@
-<h1>Listing Packers</h1>
-
-<%
-=begin %>
-COMMENTS
-<%
-=end %>
-<br>
-
-<table id=listtable CELLPADDING=4  border="1">
-  <tr>
-    <th>Name</th>
-    <th>Rating Date</th>
-    <th>Team Status </th>
-    <th colspan="3"></th>
-
-  </tr>
-
-  <% @packers.each do |packer| %>
-    <tr class="<%= cycle('rowA', 'rowB') %>">
-    <%  if (packer.team == true )
-          dcolor="TD BGCOLOR=#00ff00"
-        else
-          dcolor="TD BGCOLOR=#ff0000"
-        end %>
-
-       <td><%= packer.name %></td>
-       <td><%= packer.rating_date %></td>
-       <td <%=dcolor%> >
-     		<%= team_display :boolStatus => packer.team %>
-     	</td>
-
-       <td><%= link_to 'Show', packer %></td>
-       <td><%= link_to 'Edit', edit_packer_path(packer) %></td>
-       <td><%= link_to 'Destroy', packer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% end %>
-</table>
+<div class="container-fluid">
+  <h1>Listing Packers</h1>
 
 
-<br>
+  <br>
+  <div class="text-center">
+    <table id=listtable CELLPADDING=4  border="1">
+      <tr>
+        <th>Name</th>
+        <th>Rating Date</th>
+        <th>Team Status </th>
+        <th colspan="3"></th>
 
-<%= link_to 'New Packer', new_packer_path %> |
-<%= link_to 'Packjobs', packjobs_path %> |
-<%= link_to 'Rigs', rigs_path %> |
+      </tr>
+
+      <% @packers.each do |packer| %>
+        <tr class="<%= cycle('rowA', 'rowB') %>">
+        <%  if (packer.team == true )
+              dcolor="TD BGCOLOR=#00ff00"
+            else
+              dcolor="TD BGCOLOR=#ff0000"
+            end %>
+
+          <td><%= packer.name %></td>
+          <td><%= packer.rating_date %></td>
+          <td <%=dcolor%> >
+            <%= team_display :boolStatus => packer.team %>
+          </td>
+
+          <td><%= link_to 'Show', packer %></td>
+          <td><%= link_to 'Edit', edit_packer_path(packer) %></td>
+          <td><%= link_to 'Destroy', packer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>          
+
+  <br>
+
+  <%= link_to 'New Packer', new_packer_path %> |
+  <%= link_to 'Packjobs', packjobs_path %> |
+  <%= link_to 'Rigs', rigs_path %> |
+
+</div>
 <%
 =begin %>
 <%= link_to 'Damages', damages_path %>
