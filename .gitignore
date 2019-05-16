@@ -8,3 +8,4 @@ tmp/pids/
 .gitignore
 log/*
 log/development.log
+tmp/*
