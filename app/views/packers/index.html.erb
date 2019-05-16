@@ -1,10 +1,17 @@
 <div class="container-fluid">
-  <h1>Listing Packers</h1>
+  <h1 class="text-center">Listing Packers</h1>
 
-
-  <br>
   <div class="text-center">
-    <table id=listtable CELLPADDING=4  border="1">
+    <%= link_to 'New Packer', new_packer_path %> | <br>
+  </div>
+  <br>
+  <div class="digg_pagination">
+    <%= will_paginate @packers, :container => false %>
+  </div>
+  
+
+  <div class="text-center">
+    <table id=listtable CELLPADDING=4  border="1"  class="table" >
       <tr>
         <th>Name</th>
         <th>Rating Date</th>
@@ -32,6 +39,16 @@
           <td><%= link_to 'Destroy', packer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
+       <tr>
+        <td colspan = '100%'>
+          <div class="digg_pagination">
+            <div class="page_info">
+              <%= page_entries_info @packers %>
+            </div>
+            <%= will_paginate @packers,  :container => false %>
+          </div>
+        </td>
+      </tr>
     </table>
   </div>          
 
